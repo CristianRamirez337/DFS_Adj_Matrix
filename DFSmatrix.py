@@ -43,16 +43,17 @@ class Graph:
 v, e = 5, 4
   
 network = Network()
+
 # Create the graph
 G = Graph(v, e)
-G.addEdge(0, 1)
-G.addEdge(0, 2)
-G.addEdge(0, 3)
-G.addEdge(0, 4)
 
 nodes = [0, 1, 2, 3, 4]
 network.add_nodes(nodes)
-network.add_edge(0, 1, weight=.87)
+
+for i in nodes:
+    G.addEdge(0, i)
+    network.add_edge(0, i, weight=.87)
+
 
 network.toggle_physics(True)
 network.show('mygraph.html')
